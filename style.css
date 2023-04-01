@@ -1,0 +1,121 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%);
+
+  --font-primary: "alata", sans-serif;
+  --font-secondary: "Josefin Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--dark-gray);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.hero {
+  width: 100%;
+  height: 65rem;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("images/desktop/image-hero.jpg");
+  background-position: center;
+}
+
+.navigation {
+  margin: 0 auto;
+  padding: 5rem 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav {
+  display: block;
+  color: var(--very-dark-gray);
+}
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-list a:link,
+.nav-list a:visited {
+  text-decoration: none;
+  color: var(--white);
+  line-height: 25px;
+  font-size: 1.6rem;
+}
+
+.nav-list a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--white);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-list a:hover::after {
+  width: 100%;
+}
+.burger-nav,
+.close {
+  border: none;
+  transform: translatey(35%);
+
+  background-color: transparent;
+  display: none;
+}
+.icon,
+.icon-menu,
+.icon-close {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: var(--white);
+  border: none;
+}
+.heading-box {
+  width: 80%;
+  margin: 0 auto;
+  grid-column: 2/6;
+}
+
+.heading {
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: var(--font-secondary);
+  padding: 5rem;
+  border: 2px solid var(--white);
+  width: 65rem;
+  font-size: 7.2rem;
+  line-height: 7rem;
+}
